@@ -1,0 +1,2 @@
+# TriningProject
+Django Training project. 
