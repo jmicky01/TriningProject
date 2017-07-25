@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{% static 'css/Trainingapp.css' %}">
+    <meta charset="utf-8">
+    <title>{% block title %}Learn Python Here!{% endblock %}</title>
+  </head>
+  <body>
+    <header align="center">
+      <h1 align="center">TrainingProject</h1>
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">logout</a>
+      {% else %}
+        <div style="padding-right: 50px;text-align: right">
+        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+            </div>
+      {% endif %}
+      <hr>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+</html>
